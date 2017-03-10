@@ -1,0 +1,13 @@
+canvas{
+	float:left;
+}
+
+.conteiner{
+	margin:0 auto;
+	width: 640px;
+	height: 640;
+	border: 1px solid black;
+}
+#menu{
+	margin:20px;
+}
