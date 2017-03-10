@@ -12,7 +12,7 @@ var roadColor = "#bfbfbf"; //Cor da faixa (preenchimento)
 var bRoadColor = "#7a7a7a"; //Borda das faixas
 
 //Configurações dos 'carros', como quantidade por via
-var carsPerRoad = 12;//Quantidade total de carros em cada faixa
+var carsPerRoad = 8;//Quantidade total de carros em cada faixa
 var carWidth = 20;//A largura dos carros
 var carColor = "#ff6a6a";//A cor dos carros
 
