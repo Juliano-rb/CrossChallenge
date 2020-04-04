@@ -1,60 +1,77 @@
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="styles.css"/>
-		<script src="js/basegame/main.js"></script>
-		<script src="js/basegame/car.js"></script>
-		<script src="js/basegame/char.js"></script>
-		<script src="js/basegame/collision.js"></script>
-		<script src="js/basegame/road.js"></script>
-		
-		<script src="js/IA/GeneticAlgorithm/main.js"></script>
-		<script src="js/IA/GeneticAlgorithm/automaton.js"></script>
-		<script src="js/IA/ticker.js"></script>
-		
-	</head>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="js/basegame/main.js"></script>
+        <script src="js/basegame/car.js"></script>
+        <script src="js/basegame/char.js"></script>
+        <script src="js/basegame/collision.js"></script>
+        <script src="js/basegame/road.js"></script>
 
-	<body>
-		<div class="conteiner">
-			<canvas id="canvas" width="640" height="350">Desculpe, seu navegador não suporta canvas, tente usa a última versão do Firefox ou Chrome</canvas>
-			<br>
-			<div id="menu">
-				<span>Vias:</span><input id="vias" value='8' type="number"><br>
-				<span>Carros por vias:</span><input id="carsqtd" value='8' type="number"><br>
-				<button onclick="newRodovia();">Nova Rodovia</button><br>
+        <script src="js/IA/GeneticAlgorithm/main.js"></script>
+        <script src="js/IA/GeneticAlgorithm/automaton.js"></script>
+        <script src="js/IA/ticker.js"></script>
+    </head>
 
-				<span>População inicial:</span><input id="pop" value='20' type="number"><br>
-				<span>Porcentagem de selecionados para a próxima geração:</span><input id="percent" value='0.4' placeholder="em %" type="number"><br>
-				<span>Taxa de mutação:</span><input id="mut" value='0.01' step="0.001" type="number"><br>
-				<span>Tempo entre cada passo (ms):</span><input id="delay" value='100' type="number" onchange="delay=parseInt(document.getElementById('delay').value);"><br>
-				<button onclick="setUp(); startAI();">Iniciar Algoritmo Genético</button><br>
+    <body>
+        <div class="conteiner">
+            <canvas id="canvas" width="640" height="340">
+                Desculpe, seu navegador não suporta canvas, tente usa a última versão do Firefox ou
+                Chrome
+            </canvas>
+            <br />
+            <div id="menu">
+                <div class="menu-box">
+                    <span>Vias:</span>
+                    <input id="vias" value="8" type="number" /><br />
+                    <span>Carros por vias:</span>
+                    <input id="carsqtd" value="8" type="number" /><br />
+                    <button onclick="newRodovia();">Nova Rodovia</button><br />
+                </div>
 
-				<span id ="ger">Geração Atual: 0</span><br>
-				<span id ="totalPop">População atual:</span><br>
-				<span id ="mediaAt">Media atual da população:</span><br>
-				<span id ="topPont">Maior pontuação:</span><br>
-				<span id ="completed">Completado:</span><br>
-				
-			</div>
-		</div>
-		
-		<script>
-			document.onload = init();
-			function setUp(){
-				maxPopulation = parseInt(document.getElementById("pop").value);
-				elitePercent = parseFloat(document.getElementById("percent").value);
-				mutRation = parseFloat(document.getElementById("mut").value);
-				delay = parseInt(document.getElementById("delay").value);
-				
-			}
+                <div class="menu-box">
+                    <span>População inicial:</span>
+                    <input id="pop" value="20" type="number" /><br />
+                    <span>Porcentagem de selecionados para a próxima geração:</span>
+                    <input id="percent" value="0.4" placeholder="em %" type="number" /><br />
+                    <span>Taxa de mutação:</span>
+                    <input id="mut" value="0.01" step="0.001" type="number" /><br />
+                    <span>Tempo entre cada passo (ms):</span>
+                    <input
+                        id="delay"
+                        value="100"
+                        type="number"
+                        onchange="delay=parseInt(document.getElementById('delay').value);"
+                    /><br />
+                    <button onclick="setUp(); startAI();">Iniciar Algoritmo Genético</button><br />
+                </div>
 
-			function newRodovia(){
-				roadsQTD = parseInt(document.getElementById("vias").value);
-				carsPerRoad = parseInt(document.getElementById("carsqtd").value);
-				init();
-				
-				uptade();
-			}
-		</script>
-	</body>
+                <div class="menu-box">
+                    <span id="ger">Geração Atual: 0</span><br />
+                    <span id="totalPop">População atual:</span><br />
+                    <span id="mediaAt">Media atual da população:</span><br />
+                    <span id="topPont">Maior pontuação:</span><br />
+                    <span id="completed">Completado:</span><br />
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.onload = init();
+            function setUp() {
+                maxPopulation = parseInt(document.getElementById("pop").value);
+                elitePercent = parseFloat(document.getElementById("percent").value);
+                mutRation = parseFloat(document.getElementById("mut").value);
+                delay = parseInt(document.getElementById("delay").value);
+            }
+
+            function newRodovia() {
+                roadsQTD = parseInt(document.getElementById("vias").value);
+                carsPerRoad = parseInt(document.getElementById("carsqtd").value);
+                init();
+
+                uptade();
+            }
+        </script>
+    </body>
 </html>

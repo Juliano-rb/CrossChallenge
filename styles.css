@@ -1,13 +1,57 @@
-canvas{
-	float:left;
+canvas {
+    float: left;
 }
 
-.conteiner{
-	margin:0 auto;
-	width: 640px;
-	height: 640;
-	border: 1px solid black;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0d0d0d;
 }
-#menu{
-	margin:20px;
+.conteiner {
+    margin: 0 auto;
+    width: 640px;
+    height: 640px;
+    border: 1px solid black;
+}
+
+.menu-box {
+    padding: 4px;
+    margin: 5px;
+    background-color: #a9cbff;
+}
+
+input {
+    border: 0;
+    height: 20px;
+    width: 50px;
+    box-shadow: 0px 0px 0px #5294f9 inset;
+}
+
+input:hover {
+    transition: 0.5s;
+    box-shadow: 0px -2px 0px #5294f9 inset;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px -2px 0px #5294f9 inset;
+}
+
+button {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+        sans-serif;
+    font-weight: 600;
+    color: aliceblue;
+    box-sizing: border-box;
+    border: 1px solid #a9cbff;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #237bff;
+}
+
+button:hover {
+    transition: 0.25s;
+    color: rgb(22, 35, 46);
+    border: 1px solid #5294f9;
+    background-color: #8ab5f5;
 }
